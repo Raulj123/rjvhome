@@ -1,67 +1,57 @@
 <script>
-	import { browser } from '$app/environment';
+	// @ts-nocheck
+	import '../app.css';
 	import { page } from '$app/stores';
-	import { webVitals } from '$lib/vitals';
-	import Header from './Header.svelte';
-	import './styles.css';
 
-	/** @type {import('./$types').LayoutServerData} */
-	export let data;
+	let sidebarOpen = false;
 
-	$: if (browser && data?.analyticsId) {
-		webVitals({
-			path: $page.url.pathname,
-			params: $page.params,
-			analyticsId: data.analyticsId
-		});
+	function showSideBar() {
+		const sidebar = document.querySelector('.sidebar');
+		const main = document.querySelector('.main');
+		sidebar.style.display = 'flex';
+		sidebarOpen = true;
 	}
+
+	function close() {
+		const sidebar = document.querySelector('.sidebar');
+		sidebarOpen = false;
+		sidebar.style.display = 'none';
+	}
+
+	let route = page.route;
+	page.subscribe(($page) => {
+		route = $page.route.id;
+	});
 </script>
 
-<div class="app">
-	<Header />
+<nav>
+	<ul class="sidebar">
+		<li><a href="/">Home</a></li>
+		<li><a href="/about">About</a></li>
+		<li><a href="/projects">Projects</a></li>
+		<li><a href="/experience">Experience</a></li>
+		<li><a href="/contact">Contact</a></li>
+	</ul>
 
-	<main>
-		<slot />
-	</main>
-
-	<footer>
-		<p>visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to learn SvelteKit</p>
-	</footer>
-</div>
-
-<style>
-	.app {
-		display: flex;
-		flex-direction: column;
-		min-height: 100vh;
-	}
-
-	main {
-		flex: 1;
-		display: flex;
-		flex-direction: column;
-		padding: 1rem;
-		width: 100%;
-		max-width: 64rem;
-		margin: 0 auto;
-		box-sizing: border-box;
-	}
-
-	footer {
-		display: flex;
-		flex-direction: column;
-		justify-content: center;
-		align-items: center;
-		padding: 12px;
-	}
-
-	footer a {
-		font-weight: bold;
-	}
-
-	@media (min-width: 480px) {
-		footer {
-			padding: 12px 0;
-		}
-	}
-</style>
+	<ul>
+		<li class="hide"><a href="/" class:active={route == '/'}>Home</a></li>
+		<li class="hide"><a href="/about" class:active={route == '/about'}>About</a></li>
+		<li class="hide"><a href="/projects" class:active={route == '/projects'}>Projects</a></li>
+		<li class="hide"><a href="/experience" class:active={route == '/experience'}>Experience</a></li>
+		<li class="hide"><a href="/contact" class:active={route == '/contact'}>Contact</a></li>
+		{#if sidebarOpen}
+			<li class="close">
+				<button on:click={close}>
+					<img src="/images/close.svg" alt="close" />
+				</button>
+			</li>
+		{:else}
+			<li class="menu-btn">
+				<button on:click={showSideBar}>
+					<img src="/images/menu.svg" alt="menu" />
+				</button>
+			</li>
+		{/if}
+	</ul>
+</nav>
+<slot />

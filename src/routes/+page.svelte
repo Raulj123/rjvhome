@@ -1,59 +1,69 @@
 <script>
-	import Counter from './Counter.svelte';
-	import welcome from '$lib/images/svelte-welcome.webp';
-	import welcome_fallback from '$lib/images/svelte-welcome.png';
+	// @ts-nocheck
+	import '../app.css';
+	import { onMount } from 'svelte';
+
+	onMount(() => {
+		var smileImage = document.querySelector('.smile');
+
+		if (smileImage) {
+			smileImage.addEventListener('mouseenter', function () {
+				if (smileImage && !smileImage.classList.contains('spin')) {
+					smileImage.classList.add('spin');
+
+					// Wait for the animation to finish, then remove the spin class
+					smileImage.addEventListener(
+						'animationend',
+						function () {
+							if (smileImage) {
+								smileImage.classList.remove('spin');
+							}
+						},
+						{ once: true }
+					);
+				}
+			});
+		}
+	});
 </script>
 
-<svelte:head>
-	<title>Home</title>
-	<meta name="description" content="Svelte demo app" />
-</svelte:head>
+<div class="main">
+	<div class="hero-container">
+		<div class="hero-text">
+			<img class="smile" src="/images/smile.svg" alt="smile" />
+			<h1 class="text-h">
+				Hi, I'm
+				<span class="text-name">Raul!</span>
+			</h1>
+		</div>
+		<p class="text-p">I'm a 4th year Computer science major🎓 and past Full Stack Developer 👨🏽‍💻</p>
+	</div>
+	<div class="main">
+		<div class="grid-container">
+			<a href="/about" class="grid-item">
+				<img class="card-img" src="/images/about.svg" alt="smile" />
+				<h2 class="card-text">About</h2>
+			</a>
 
-<section>
-	<h1>
-		<span class="welcome">
-			<picture>
-				<source srcset={welcome} type="image/webp" />
-				<img src={welcome_fallback} alt="Welcome" />
-			</picture>
-		</span>
+			<a href="/projects" class="grid-item">
+				<img class="card-img" src="images/projects.svg" alt="smile" />
+				<h2 class="card-text">Projects</h2>
+			</a>
 
-		to your new<br />SvelteKit app
-	</h1>
+			<a href="/experience" class="grid-item">
+				<img class="card-img" src="images/exp.svg" alt="smile" />
+				<h2 class="card-text">Experiance</h2>
+			</a>
 
-	<h2>
-		try editing <strong>src/routes/+page.svelte</strong>
-	</h2>
+			<a href="/contact" class="grid-item">
+				<img class="card-img" src="images/contact.svg" alt="smile" />
+				<h2 class="card-text">Contact</h2>
+			</a>
 
-	<Counter />
-</section>
-
-<style>
-	section {
-		display: flex;
-		flex-direction: column;
-		justify-content: center;
-		align-items: center;
-		flex: 0.6;
-	}
-
-	h1 {
-		width: 100%;
-	}
-
-	.welcome {
-		display: block;
-		position: relative;
-		width: 100%;
-		height: 0;
-		padding: 0 0 calc(100% * 495 / 2048) 0;
-	}
-
-	.welcome img {
-		position: absolute;
-		width: 100%;
-		height: 100%;
-		top: 0;
-		display: block;
-	}
-</style>
+			<a href="/guestbook" class="grid-item">
+				<img class="card-img" src="images/guest.svg" alt="smile" />
+				<h2 class="card-text">GuestBook</h2>
+			</a>
+		</div>
+	</div>
+</div>
