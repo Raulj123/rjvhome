@@ -62,7 +62,7 @@
 	<div class="itemAbout">
 		<h4 class="gridAbout" style="color: white;">(Me in the upside down bruh 🌀)</h4>
 		<p>
-			<img src="./images/me.jpg" alt="me" />
+			<img src="/images/me.jpg" alt="me" />
 		</p>
 		<p>
 			Going into my senior year at California State University, Fullerton. Avid enjoyer of solving
