@@ -1,6 +1,10 @@
 import { expect, test } from '@playwright/test';
 
-test('about page has expected h1', async ({ page }) => {
-	await page.goto('/about');
-	await expect(page.getByRole('heading', { name: 'About this app' })).toBeVisible();
-});
+test('Svelte app loads', async ({ page }) => {
+	await page.goto('http://localhost:5173/');
+	await page.waitForTimeout(2000);
+	const isContentPresent = await page.isVisible('.main');
+	expect(isContentPresent).toBeTruthy();
+  });
+  
+  
