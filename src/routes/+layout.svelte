@@ -2,6 +2,8 @@
 	// @ts-nocheck
 	import '../app.css';
 	import { page } from '$app/stores';
+	import { fly } from 'svelte/transition'
+	export let data
 
 	let sidebarOpen = false;
 
@@ -22,6 +24,12 @@
 	page.subscribe(($page) => {
 		route = $page.route.id;
 	});
+
+	export function load({ url }) {
+		return {
+			url: url.pathname,
+		}
+	}
 </script>
 
 <nav>
@@ -54,4 +62,14 @@
 		{/if}
 	</ul>
 </nav>
-<slot />
+
+{#key data.url}
+	<div
+		in:fly={{ x: -200, duration: 300, delay: 300 }}
+		out:fly={{ x: 200, duration: 300 }}
+	>
+	<slot/>
+	</div>
+{/key}
+
+
