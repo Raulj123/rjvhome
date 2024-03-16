@@ -1,5 +1,11 @@
 export const jobs = [
 	{
+		company: 'Beckman Coulter 🧬',
+		position: 'Web Developer Intern',
+		date: 'June 2024 - TBD',
+		description: 'Incoming Web Developer 👀'
+	},
+	{
 		company: 'Zymo Research 🧪',
 		position: 'Full Stack Developer Intern',
 		date: 'June 2023 - August 2023',
