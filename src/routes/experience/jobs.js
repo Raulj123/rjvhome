@@ -10,7 +10,7 @@ export const jobs = [
 		position: 'Full Stack Developer Intern',
 		date: 'June 2023 - August 2023',
 		description:
-			'Led the creation of an innovative internal dashboard, optimizing user experience with seamless Excel parsing and database migration; applied Agile for iterative, user-centric development.'
+			'Led the design and implementation of a Python-based data pipeline to migrate legacy data, modernize database structure, and enhance accessibility, while also spearheading Django REST Framework API endpoint development for efficient data retrieval and implementing secure login-based authentication for improved dashboard security.'
 	},
 	{
 		company: 'Code Ninjas 🥷🏽',

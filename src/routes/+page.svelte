@@ -52,7 +52,7 @@
 
 			<a href="/experience" class="grid-item">
 				<img class="card-img" src="images/exp.svg" alt="smile" />
-				<h2 class="card-text">Experiance</h2>
+				<h2 class="card-text">Experience</h2>
 			</a>
 
 			<a href="/contact" class="grid-item">
