@@ -19,3 +19,9 @@
 
 Built with SvelteKit, Prisma, and Auth.js to authenticate a user with an OAuth provider (GitHub) to sign my [guestbook](https://rjvhome.vercel.app/guestbook).
 
+## How to run
+```
+  npm install
+  npm run dev
+```
+
