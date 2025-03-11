@@ -89,6 +89,7 @@ a:hover {
 	font-size: 20px;
 	line-height: 1.5;
 	max-width: clamp(400px, 80vw, 550px);
+	text-align: center;
 }
 
 .text-name {
@@ -104,7 +105,6 @@ a:hover {
 }
 .grid-container {
 	display: flex;
-	flex-wrap: wrap;
 	justify-content: center;
 	line-height: 1.6;
 	position: relative;

@@ -60,10 +60,6 @@
 				<h2 class="card-text">Contact</h2>
 			</a>
 
-			<a href="/guestbook" class="grid-item">
-				<img class="card-img" src="images/guest.svg" alt="smile" />
-				<h2 class="card-text">GuestBook</h2>
-			</a>
 		</div>
 	</div>
 </div>
