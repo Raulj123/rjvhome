@@ -47,12 +47,13 @@ body {
 .hero-section {
 	display: flex;
 	flex-direction: column;
+	margin: 5px;
 }
 
 .hero-section img {
 	height: auto;
-	max-width: 200px;
-	border-radius: 60%;
+	max-width: 170px;
+	border-radius: 50%;
 }
 
 .hero-text {
