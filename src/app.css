@@ -1,9 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Marck+Script&family=Poppins:ital@0;1&display=swap');
 
 :root {
-	--text-color: rgb(255, 255, 252);
+	--text-color: rgb(141, 112, 82);
 	--hover: rgb(212, 212, 212, 0.6);
-	--base-color: #111010;
+	--base-color: rgb(252, 252, 250);
 	--card-color: rgb(212, 212, 212, 0.1);
 	--nav-color: rgb(17, 16, 16, 0.9);
 	--pink: rgb(248, 113, 113);
@@ -11,7 +11,7 @@
 	--green: rgb(74, 222, 128);
 	--blue: rgb(37, 99, 235);
 	--purp: rgb(184, 107, 217);
-	--textSub: #d4d4d4;
+	--textSub: rgb(133, 131, 129);
 	--font-P: 'Poppins', sans-serif;
 }
 
@@ -35,6 +35,17 @@ body {
 
 .hero-container {
 	display: flex;
+	align-items: flex-start;
+}
+
+.bio {
+	flex: 1;
+	margin-right: 2rem;
+}
+
+.hero-section:last-child {
+	flex-shrink: 0;
+	width: 170px;
 }
 .hero-title {
 	font-family: var(--font-P);
@@ -51,7 +62,7 @@ body {
 }
 
 .hero-section img {
-	height: auto;
+	height: 170px;
 	max-width: 170px;
 	border-radius: 50%;
 }
@@ -73,6 +84,11 @@ body {
 }
 
 .contact-container h1 {
+	color: var(--text-color);
+}
+
+.stalk {
+	font-family: var(--font-P);
 	color: var(--text-color);
 }
 
