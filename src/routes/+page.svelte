@@ -25,7 +25,6 @@
 
 <div class="contact-container">
 	<h1>Contact</h1>
-	<p>I dont use Twitter. All other socials are inactive. Someone convince me to get Mastodon.</p>
 	<ul style="list-style-type: none; padding:0; margin:0;">
 		<li>
 			<div class="icons">
@@ -48,9 +47,9 @@
 	</ul>
 </div>
 
-<div class="stalk">
+<!-- <div class="stalk">
 	<p>
 		Psss Im tracking you ....
 		<a href="https://umami.libme.duckdns.org/share/Dt6f3Ebkj1BHBVkS/rjvhome.vercel.app">Umami</a>
 	</p>
-</div>
+</div> -->
